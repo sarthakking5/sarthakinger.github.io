@@ -6,6 +6,9 @@
     <title>Sarthak's Portfolio</title>
     <style>
         /* Base Styles */
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
         body {
             margin: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -30,6 +33,9 @@
             background: #333;
             text-align: center;
             padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         nav a {
             color: white;
@@ -78,12 +84,32 @@
             font-size: 0.9rem;
             color: #666;
         }
+        .education-item {
+            margin-bottom: 20px;
+        }
+        .education-item h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.3rem;
+        }
+        .education-item p {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #555;
+        }
         footer {
             background: #333;
             color: white;
             text-align: center;
             padding: 15px 0;
             font-size: 0.9rem;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 8px;
         }
     </style>
 </head>
@@ -96,7 +122,7 @@
 
     <nav>
         <a href="#about">About</a>
-        <a href="#projects">Education</a>
+        <a href="#education">Education</a> <!-- Fixed wrong link -->
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
@@ -135,17 +161,17 @@
 
                 <div class="project-card">
                     <h3>Recommender System 🌐</h3>
-                    <p>Developed an end to end application that allows user to search for their favourite movies and recommends similar movies to them.</p>
+                    <p>Developed an end-to-end application that allows users to search for their favourite movies and recommends similar movies to them.</p>
                 </div>
 
                 <div class="project-card">
                     <h3>Data Science Salary Estimator 📊</h3>
-                    <p>Created an end to end tool that estimates data science salaries to help data scientists negotiate their income when they get a job.</p>
+                    <p>Created an end-to-end tool that estimates data science salaries to help data scientists negotiate their income when they get a job.</p>
                 </div>
                 
                 <div class="project-card">
                     <h3>Safety Gear Detection</h3>
-                    <p>The model aims to detect whether the person is wearing the gear that ensures safety in factories and construction sites.</p>
+                    <p>The model aims to detect whether a person is wearing safety gear required in factories and construction sites.</p>
                 </div>
 
             </div>
@@ -155,7 +181,7 @@
             <h2>Contact</h2>
             <p>Feel free to connect with me via:</p>
             <ul>
-                <li>Email: sarthak.kinger@gmail.com/li>
+                <li>Email: sarthak.kinger@gmail.com</li> <!-- Fixed closing li tag -->
                 <li>GitHub: <a href="https://github.com/sarthakking5" target="_blank">sarthakking5</a></li>
             </ul>
         </section>
