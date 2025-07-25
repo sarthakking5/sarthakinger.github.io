@@ -1,117 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Sarthak's Portfolio</title>
-    <style>
-        /* Base Styles */
-        html {
-            scroll-behavior: smooth; /* Smooth scrolling */
-        }
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f9f9f9;
-            color: #333;
-        }
-        header {
-            background-color: #4CAF50;
-            color: white;
-            padding: 30px 0;
-            text-align: center;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2.5rem;
-        }
-        header p {
-            margin: 10px 0 0;
-            font-size: 1.2rem;
-        }
-        nav {
-            background: #333;
-            text-align: center;
-            padding: 10px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-        nav a {
-            color: white;
-            margin: 0 15px;
-            text-decoration: none;
-            font-size: 1rem;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            max-width: 1000px;
-            margin: auto;
-            padding: 20px;
-        }
-        section {
-            margin-bottom: 50px;
-        }
-        h2 {
-            color: #4CAF50;
-            border-bottom: 2px solid #4CAF50;
-            padding-bottom: 5px;
-            margin-bottom: 20px;
-            font-size: 2rem;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .project-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s;
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        .project-card h3 {
-            margin-top: 0;
-            color: #333;
-        }
-        .project-card p {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        .education-item {
-            margin-bottom: 20px;
-        }
-        .education-item h3 {
-            margin: 0;
-            color: #333;
-            font-size: 1.3rem;
-        }
-        .education-item p {
-            margin: 5px 0 0;
-            font-size: 1rem;
-            color: #555;
-        }
-        footer {
-            background: #333;
-            color: white;
-            text-align: center;
-            padding: 15px 0;
-            font-size: 0.9rem;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 8px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+   <style>
+:root {
+    --bg: #181824;
+    --bg-dark: #131321;
+    --card-bg: #202034;
+    --primary: #59c3c3;
+    --primary-dark: #397d7d;
+    --accent: #aba1ff;
+    --accent-dark: #6e65a4;
+    --text-main: #f7f7fb;
+    --text-subtle: #b6b8d6;
+    --border: #242247;
+    --nav-bg: #181824;
+    --nav-border: #282847;
+    --footer-bg: #131321;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    margin: 0;
+    font-family: 'DM Sans', 'Segoe UI', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    min-height: 100vh;
+}
+header {
+    background: var(--bg-dark);
+    color: var(--primary);
+    padding: 44px 0 32px 0;
+    text-align: center;
+    border-bottom: 2px solid var(--primary);
+}
+header h1 {
+    margin: 0;
+    font-size: 2.7rem;
+    font-family: 'DM Sans', Arial, sans-serif;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+}
+header p {
+    margin: 18px 0 0 0;
+    font-size: 1.15rem;
+    color: var(--accent);
+}
+nav {
+    background: var(--nav-bg);
+    border-bottom: 1.5px solid var(--nav-border);
+    text-align: center;
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 14px;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+}
+.nav-list li {
+    display: inline-block;
+}
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 1.08rem;
+    padding: 9px 19px;
+    margin: 0 3px;
+    border-radius: 6px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+    transition: background 0.2s, color 0.18s;
+}
+nav a:hover, nav a:focus {
+    background: var(--primary);
+    color: var(--bg-dark);
+}
+.container {
+    max-width: 980px;
+    margin: auto;
+    padding: 32px 18px 0 18px;
+}
+section {
+    margin-bottom: 52px;
+}
+h2 {
+    color: var(--primary);
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 7px;
+    margin-bottom: 24px;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.tab-buttons {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.tab-btn {
+    background: var(--accent);
+    border: none;
+    color: var(--bg-dark);
+    font-size: 1.09rem;
+    padding: 13px 28px;
+    margin: 0 6px;
+    border-radius: 7px 7px 0 0;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: background 0.22s, color 0.2s;
+    box-shadow: 0 2px 10px 0 rgba(90,163,163,0.10);
+}
+.tab-btn:hover {
+    background: var(--primary);
+    color: var(--bg-dark);
+}
+.tab-btn.active {
+    background: var(--primary);
+    color: var(--bg);
+    font-weight: 700;
+}
+.tab-content {
+    display: none;
+    animation: fadeInTab 0.6s;
+}
+.tab-content.active {
+    display: block;
+    opacity: 1;
+}
+@keyframes fadeInTab {
+    from { opacity: 0; transform: translateY(40px);}
+    to {opacity: 1; transform: none;}
+}
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 23px;
+}
+.project-card {
+    background: var(--card-bg);
+    border-radius: 13px;
+    box-shadow: 0 4px 22px rgba(90,163,163,0.13), 0 1px 5px rgba(132,161,255,0.09);
+    padding: 21px 16px 13px 16px;
+    display: flex;
+    flex-direction: column;
+    border-left: 5px solid var(--primary);
+    transition: transform 0.17s, border-left 0.23s, box-shadow 0.23s;
+}
+.project-card:hover {
+    transform: translateY(-3px) scale(1.017);
+    border-left: 5px solid var(--accent-dark);
+    box-shadow: 0 10px 30px var(--accent), 0 3px 9px var(--primary-dark);
+}
+.project-card img {
+    margin-bottom: 11px;
+    width: 100%;
+    border-radius: 7px;
+    object-fit: cover;
+    height: 134px;
+    background: var(--bg);
+    border: 1.2px solid var(--accent);
+}
+.project-card h3 {
+    margin-top: 0;
+    color: var(--accent);
+    font-size: 1.09rem;
+    font-weight: 700;
+    margin-bottom: 9px;
+}
+.project-card p {
+    font-size: 0.98rem;
+    color: var(--text-subtle);
+    flex-grow: 1;
+    margin-bottom: 12px;
+}
+.project-card a {
+    margin-top: 6px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.02rem;
+    border-bottom: 2px solid transparent;
+    transition: color 0.17s, border-bottom 0.17s;
+}
+.project-card a:hover {
+    color: var(--accent);
+    border-bottom: 2px solid var(--accent);
+}
+.education-item {
+    margin-bottom: 19px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    padding: 16px 15px 8px 15px;
+    box-shadow: 0 1px 5px rgba(90,163,163,0.11);
+}
+.education-item h3 {
+    margin: 0;
+    color: var(--primary-dark);
+    font-size: 1.15rem;
+    font-weight: 700;
+}
+.education-item p {
+    margin: 5px 0 0;
+    font-size: 1.06rem;
+    color: var(--text-subtle);
+}
+footer {
+    background: var(--footer-bg);
+    color: #cac8fa;
+    text-align: center;
+    padding: 21px 0 12px 0;
+    font-size: 1.04rem;
+    letter-spacing: 1px;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+ul li {
+    margin-bottom: 9px;
+}
+</style>
+
+
+
 </head>
 <body>
 
@@ -122,85 +244,226 @@
 
     <nav>
         <a href="#about">About</a>
-        <a href="#education">Education</a> <!-- Fixed wrong link -->
+        <a href="#education">Education</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
     </nav>
 
     <div class="container">
-        
         <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! 👋 I'm Sarthak, a passionate developer who loves building machine learning models, web applications, and working on exciting tech projects. 
-            I enjoy solving real-world problems through technology and constantly strive to learn new skills. This is a small glimpse into my work and skills.</p>
-        </section>
+    <h2>About Me</h2>
+    <p>Hello! 👋 I'm Sarthak, an enthusiastic developer passionate about building smarter solutions whether that means designing intelligent web applications, developing robust machine learning models, or exploring the vast world of data science and analytics.</p>
+
+    <ul>
+        <li><b>AI Engineering:</b> Architecting intelligent systems and seamlessly deploying AI solutions for real-world use.</li>
+        <li><b>Data Science & Analytics:</b> Transforming raw data into actionable insights that drive decision-making and innovation.</li>
+    </ul>
+
+    <p>My journey has taken me into diverse industries, including:</p>
+    <ul>
+        <li><b>Automotive</b> — Contributing to advanced data-driven solutions and automation.</li>
+        <li><b>Finance</b> — Developing models that support risk assessment and informed business strategies.</li>
+        <li><b>Robotics</b> — Applying AI and analytics to enhance intelligent behavior in automated systems.</li>
+    </ul>
+
+    <p>I thrive on turning complex ideas into tangible impact, enjoy collaborating across disciplines, and am continually inspired by the ever-evolving power of technology. This portfolio is a snapshot of the projects and skills that fuel my excitement for tech and discovery.</p>
+</section>
+
 
         <section id="education">
-            <h2>Education</h2>
-
-            <div class="education-item">
+    <h2>Education</h2>
+    <div class="education-timeline">
+        <div class="education-item">
+            <div class="education-content">
                 <h3>Masters in Data Analytics and Decision Science</h3>
                 <p>RWTH Aachen University</p>
+                <p class="education-year">2022 – 2024</p>
             </div>
-
-            <div class="education-item">
+            <div class="education-connector">
+                <span></span>
+            </div>
+        </div>
+        <div class="education-item">
+            <div class="education-content">
                 <h3>Bachelors in Automation Engineering</h3>
                 <p>Guru Gobind Singh Indraprastha University</p>
+                <p class="education-year">2017 – 2021</p>
             </div>
+            <div class="education-connector">
+                <span></span>
+            </div>
+        </div>
+    </div>
+</section>
 
-        </section>
+<style>
+.education-timeline {
+    position: relative;
+    margin-left: 32px;
+    padding-left: 22px;
+    border-left: 3px solid #59c3c3;
+}
+.education-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 34px;
+    position: relative;
+}
+.education-content {
+    background: #202034;
+    border-radius: 7px;
+    padding: 16px 18px 8px 18px;
+    box-shadow: 0 1px 8px rgba(90,163,163,0.13);
+    margin-bottom: 0;
+    min-width: 260px;
+}
+.education-connector {
+    width: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+    position: relative;
+}
+.education-connector span {
+    display: block;
+    width: 16px;
+    height: 16px;
+    background: #59c3c3;
+    border: 3px solid #aba1ff;
+    border-radius: 50%;
+    margin-top: 13px;
+    box-shadow: 0 0 0 6px #181824;
+}
+.education-year {
+    color: #aba1ff;
+    font-weight: bold;
+    margin-top: 7px;
+}
+.github-link {
+    color: #fff !important;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.18s;
+}
+.github-link:hover, .github-link:focus {
+    color: #aba1ff !important; /* Or choose your preferred accent color for hover */
+    text-decoration: underline;
+}
+@media (max-width: 530px) {
+  .education-content { min-width: 0; }
+  .education-timeline { margin-left: 12px; padding-left: 11px; }
+}
+</style>
+
 
         <section id="projects">
             <h2>Projects</h2>
-            <div class="projects">
-                
-                <div class="project-card">
-                    <h3>Rain Prediction Web App 🌧️</h3>
-                    <p>Developed a machine learning web application to predict whether it will rain tomorrow using weather data. Deployed with Docker, GKE, and CI/CD pipelines via GitHub Actions, ensuring scalable and efficient predictions.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Debt Collection Risk Classification 💳</h3>
-                    <p>Created a machine learning model to classify customers into different risk levels based on their financial history and payment behavior. This tool helps financial institutions in Malaysia optimize debt recovery by focusing on high-risk customers.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Insurance Premium Restructuring for Casco Policies 🚗</h3>
-                    <p>Developed machine learning models to restructure insurance premiums for Casco policies, predicting both damage severity and frequency. Incorporated macroeconomic data and model tracking for effective management, leading to precise cost estimations.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Water Potability Prediction 🚰</h3>
-                    <p>Built a machine learning model to predict if water is safe for consumption, leveraging MLOps practices like model tracking and automated deployment. Integrated CI/CD pipelines, Docker, and Kubernetes to ensure scalable model serving for real-time predictions.</p>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Recommender System 🌐</h3>
-                    <p>Designed an end-to-end movie recommender system that uses collaborative filtering to suggest similar movies based on user preferences. This application allows users to search and discover new films tailored to their tastes.</p>
-                </div>
-        
-                <div class="project-card">
-                    <h3>Data Science Salary Estimator 📊</h3>
-                    <p>Created an interactive tool to estimate data science salaries based on various factors like experience, location, and education. This project assists data professionals in negotiating their salaries with a data-driven approach.</p>
-                </div>
-        
+
+            <div class="tab-buttons">
+                <button class="tab-btn active" onclick="showTab(event, 'ai')">AI Engineering</button>
+                <button class="tab-btn" onclick="showTab(event, 'ds')">Data Science</button>
             </div>
+
+            <!-- AI Engineering Projects (Template) -->
+            <div id="ai" class="tab-content active">
+                <div class="projects">
+                    <div class="project-card">
+                        <img src="images/ai-agents.jpg" alt="Project Title" />
+                        <h3>AI Blog Agents</h3>
+                        <p>This project automates the process of researching YouTube videos and generating blog posts using CrewAI, custom AI agents, and a YouTube content search tool.</p>
+                        <a href="https://github.com/sarthakking5/AI-Blog-Agent" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/rag-in-action.jpeg" alt="Project Title" />
+                        <h3>RAG Document Q&A</h3>
+                        <p>A Streamlit application that performs Retrieval-Augmented Generation (RAG) powered Q&A over PDF research papers using Groq's Llama 3 model and vector search with FAISS.</p>
+                        <a href="https://github.com/sarthakking5/RAG-Document-QA" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/LLM_Summarization.jpg" alt="Project Title" />
+                        <h3>Summarization App</h3>
+                        <p>A Streamlit app that summarizes YouTube videos or any web article using LangChain, Groq's Gemma model, and YouTube Transcript API.</p>
+                        <a href="https://github.com/sarthakking5/Summarization-App" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </div>
+                <!-- Just duplicate or modify these templates to add more AI Engineering projects later -->
+            </div>
+
+            <!-- Data Science Projects (all current) -->
+            <div id="ds" class="tab-content">
+                <div class="projects">
+                    <div class="project-card">
+                        <img src="images/rain-prediction.jpg" alt="Rain Prediction Web App" />
+                        <h3>Rain Prediction Web App </h3>
+                        <p>Developed a machine learning web application to predict whether it will rain tomorrow using weather data. Deployed with Docker, GKE, and CI/CD pipelines via GitHub Actions, ensuring scalable and efficient predictions.</p>
+                        <a href="https://github.com/sarthakking5/Rain-Prediction-Aus" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/debt-collection.jpg" alt="Debt Collection Risk Classification" />
+                        <h3>Debt Collection Risk Classification </h3>
+                        <p>Created a machine learning model to classify customers into different risk levels based on their financial history and payment behavior. This tool helps financial institutions in Malaysia optimize debt recovery by focusing on high-risk customers.</p>
+                        <a href="https://github.com/sarthakking5/debt-collection-risk-classification" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/insurance-premium.jpg" alt="Insurance Premium Restructuring" />
+                        <h3>Insurance Premium Restructuring </h3>
+                        <p>Developed machine learning models to restructure insurance premiums for Casco policies, predicting both damage severity and frequency. Incorporated macroeconomic data and model tracking for effective management, leading to precise cost estimations.</p>
+                        <a href="https://github.com/sarthakking5/insurance-premium-restructuring" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/water-potability.jpg" alt="Water Potability Prediction" />
+                        <h3>Water Potability Prediction </h3>
+                        <p>Built a machine learning model to predict if water is safe for consumption, leveraging MLOps practices like model tracking and automated deployment. Integrated CI/CD pipelines, Docker, and Kubernetes to ensure scalable model serving for real-time predictions.</p>
+                        <a href="https://github.com/sarthakking5/Water-Potability-MLOps" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/recommender-system.jpg" alt="Recommender System" />
+                        <h3>Recommender System </h3>
+                        <p>Designed an end-to-end movie recommender system that uses collaborative filtering to suggest similar movies based on user preferences. This application allows users to search and discover new films tailored to their tastes.</p>
+                        <a href="https://github.com/sarthakking5/Recommender-system" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                    <div class="project-card">
+                        <img src="images/safety-gear.jpg" alt="Safety Gear Dectection" />
+                        <h3>Safety Gear Detection </h3>
+                        <p>The project aims to detect whether the person is wearing the gear that ensures safety in factories and construction sites.Using the Tensorflow Object Detection API the model has been extensively trained using a Single Shot Multibox Detector framework</p>
+                        <a href="https://github.com/sarthakking5/data-science-salary-estimator" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <section id="contact">
             <h2>Contact</h2>
             <p>Feel free to connect with me via:</p>
             <ul>
-                <li>Email: sarthak.kinger@gmail.com</li>
-                <li>GitHub: <a href="https://github.com/sarthakking5" target="_blank">sarthakking5</a></li>
+                <li>Email: sarthak.kinger@gmail.com or sarthak.kinger@rwth-aachen.de</li>
+                <li>
+  GitHub:
+  <a href="https://github.com/sarthakking5" class="github-link" target="_blank" rel="noopener noreferrer">
+    sarthakking5
+  </a>
+</li>
+
             </ul>
         </section>
-
     </div>
 
     <footer>
         © 2024 Sarthak. All rights reserved.
     </footer>
+
+    <script>
+        function showTab(event, tabId) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 
 </body>
 </html>
